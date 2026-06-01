@@ -1,0 +1,3 @@
+[submodule "ildaeil"]
+	path = ildaeil
+	url = https://github.com/DISTRHO/Ildaeil.git

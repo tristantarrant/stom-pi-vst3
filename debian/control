@@ -1,0 +1,23 @@
+Source: stom-pi-vst3
+Section: sound
+Priority: optional
+Maintainer: Dataforte <info@dataforte.net>
+Build-Depends: debhelper (>= 13),
+               pkg-config,
+               libsndfile1-dev
+Standards-Version: 4.6.2
+Homepage: https://github.com/tristantarrant/stom-pi-vst3
+
+Package: stom-pi-vst3
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Suggests: stom-pi
+Description: VST3 plugin bridge for Stom-Pi
+ Provides the VST3-to-LV2 bridge tooling for the stom-pi pedalboard
+ platform. Allows VST3 plugins to be loaded by mod-host as native LV2
+ plugins with auto-generated control ports and modgui.
+ .
+ Includes a shared LV2 wrapper binary (vst3-wrapper.so) that is symlinked
+ into generated LV2 bundles, and a scanner tool (stom-pi-vst3-scan) that
+ introspects VST3 plugins and generates wrapper metadata.

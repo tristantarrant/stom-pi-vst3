@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	$(MAKE)
+
+override_dh_auto_install:
+	install -D -m 644 build/vst3-wrapper.so debian/stom-pi-vst3/usr/lib/stom-pi/vst3-wrapper.so
+	install -D -m 755 build/stom-pi-vst3-scan debian/stom-pi-vst3/usr/bin/stom-pi-vst3-scan
+
+override_dh_auto_test:
+	# Skip tests during build
+
+override_dh_shlibdeps:
+	dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info
+
+override_dh_auto_clean:
+	$(MAKE) clean

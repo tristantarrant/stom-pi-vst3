@@ -1,0 +1,7 @@
+stom-pi-vst3 (0.1.0-1) unstable; urgency=medium
+
+  * Initial release.
+  * VST3-to-LV2 wrapper binary (vst3-wrapper.so)
+  * VST3 scanner tool (stom-pi-vst3-scan)
+
+ -- Dataforte <info@dataforte.net>  Sun, 01 Jun 2026 00:00:00 +0100
